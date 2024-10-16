@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>המלצה על מנהל/ת פורצ/ת דרך לשנת הלימודים תשפ"ה</title>
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #f5f5f5;
+            --text-color: #333;
+            --border-color: #ddd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: var(--primary-color);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h2 {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .field {
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+        input[type="text"], input[type="email"], input[type="date"], textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        input[type="text"]:focus, input[type="email"]:focus, input[type="date"]:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+        }
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        .btn {
+            display: inline-block;
+            width: auto;
+            min-width: 200px;
+            margin: 10px;
+            padding: 12px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s, transform 0.1s;
+            text-align: center;
+        }
+        .btn:hover {
+            background-color: #3a7bc8;
+            transform: translateY(-2px);
+        }
+        .btn:active {
+            transform: translateY(0);
+        }
+        @media print {
+            .btn {
+                display: none;
+            }
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .close {
+            color: #aaa;
+            float: left;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .btn {
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form id="recommendationForm">
+        <h1>המלצה על מנהל/ת פורצ/ת דרך לשנת הלימודים תשפ"ה</h1>
+       
+        <div class="section">
+            <h2>פרטים כלליים על המנהל/ת המועמד/ת</h2>
+            <div class="field">
+                <label for="name">שם המנהל/ת:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="field">
+                <label for="phone">טלפון נייד:</label>
+                <input type="text" id="phone" name="phone" required>
+            </div>
+            <div class="field">
+                <label for="email">כתובת דוא"ל:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="field">
+                <label for="years_managing">מספר שנות ניהול המוסד:</label>
+                <input type="text" id="years_managing" name="years_managing" required>
+            </div>
+            <div class="field">
+                <label for="total_experience">ותק כללי בניהול:</label>
+                <input type="text" id="total_experience" name="total_experience" required>
+            </div>
+        </div>
+       
+        <div class="section">
+            <h2>פרטים על המוסד החינוכי</h2>
+            <div class="field">
+                <label for="institution_name">שם המוסד:</label>
+                <input type="text" id="institution_name" name="institution_name" required>
+            </div>
+            <div class="field">
+                <label for="authority">רשות:</label>
+                <input type="text" id="authority" name="authority" required>
+            </div>
+            <div class="field">
+                <label for="district">מחוז:</label>
+                <input type="text" id="district" name="district" required>
+            </div>
+            <div class="field">
+                <label for="supervisor">שם המפקח על המוסד:</label>
+                <input type="text" id="supervisor" name="supervisor" required>
+            </div>
+            <div class="field">
+                <label for="supervision_type">פיקוח (מ"מ, ממ"ד, חרדי, אחר):</label>
+                <input type="text" id="supervision_type" name="supervision_type" required>
+            </div>
+            <div class="field">
+                <label for="grade_levels">דרגות הכיתה:</label>
+                <input type="text" id="grade_levels" name="grade_levels" required>
+            </div>
+            <div class="field">
+                <label for="num_classes">מספר הכיתות:</label>
+                <input type="text" id="num_classes" name="num_classes" required>
+            </div>
+            <div class="field">
+                <label for="special_frameworks">מסגרות מיוחדות בבית הספר:</label>
+                <input type="text" id="special_frameworks" name="special_frameworks" required>
+            </div>
+            <div class="field">
+                <label for="num_students">מספר התלמידים:</label>
+                <input type="text" id="num_students" name="num_students" required>
+            </div>
+        </div>
+       
+        <div class="section">
+            <h2>המלצה כללית</h2>
+            <div class="field">
+                <label for="recommendation">תארו בפירוט את התרשמותכם מהמנהל/ת ואת הסיבות המרכזיות להמלצה:</label>
+                <textarea id="recommendation" name="recommendation" required></textarea>
+            </div>
+        </div>
+       
+        <div class="section">
+            <div class="field">
+                <label for="recommenders">שמות הממליצים ותפקידיהם:</label>
+                <input type="text" id="recommenders" name="recommenders" required>
+            </div>
+            <div class="field">
+                <label for="signatures">חתימות הממליצים:</label>
+                <input type="text" id="signatures" name="signatures" required>
+            </div>
+            <div class="field">
+                <label for="date">תאריך:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+        </div>
+
+        <button type="button" id="printBtn" class="btn">הדפס את הטופס</button>
+        <button type="submit" id="submitBtn" class="btn">שלח טופס</button>
+    </form>
+
+    <div id="emailModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>בחר אפשרות לשליחת הטופס</h2>
+            <button id="gmailBtn" class="btn">פתח ב-Gmail</button>
+            <button id="outlookBtn" class="btn">פתח ב-Outlook</button>
+            <button id="copyBtn" class="btn">העתק תוכן האימייל</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('printBtn').addEventListener('click', () => window.print());
+
+        document.getElementById('recommendationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const body = Array.from(formData.entries())
+                .map(([key, value]) => `${key}: ${value}`)
+                .join('\n');
+
+            const subject = 'המלצה על מנהל/ת פורצ/ת דרך לשנת הלימודים תשפ"ה';
+            const recipient = 'ronenco@education.gov.il';
+
+            // Show the modal
+            document.getElementById('emailModal').style.display = 'block';
+
+            // Gmail button
+            document.getElementById('gmailBtn').onclick = function() {
+                const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${recipient}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                window.open(gmailUrl, '_blank');
+            };
+
+            // Outlook button
+            document.getElementById('outlookBtn').onclick = function() {
+                const outlookUrl = `https://outlook.office.com/mail/deeplink/compose?to=${recipient}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                window.open(outlookUrl, '_blank');
+            };
+
+            // Copy content button
+            document.getElementById('copyBtn').onclick = function() {
+                const fullContent = `To: ${recipient}\nSubject: ${subject}\n\n${body}`;
+                navigator.clipboard.writeText(fullContent).then(() => {
+                    alert('תוכן האימייל הועתק ללוח. כעת תוכל להדביק אותו באפליקציית האימייל שלך.');
+                });
+            };
+        });
+
+        // Close the modal when clicking on <span> (x)
+        document.querySelector('.close').onclick = function() {
+            document.getElementById('emailModal').style.display = 'none';
+        };
+
+        // Close the modal when clicking outside of it
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('emailModal')) {
+                document.getElementById('emailModal').style.display = 'none';
+            }
+        };
+    </script>
+</body>
+</html>
